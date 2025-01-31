@@ -1,7 +1,3 @@
-discussion.md
-markdown
-Copy
-Edit
 # Discussion
 
 ## Solutions Considered
@@ -35,12 +31,14 @@ We chose **Regular Expressions (`re` module)** because:
    git clone https://github.com/ShivamKumar583/tech-campus-recruitment-2025.git
    cd tech-campus-recruitment-2025
 
-2. **Navigate to src/ Directory** 
+2. **Navigate to src/ Directory**
+   ```bash
     cd src
 
-3. **Run the Log Extraction Script** 
+3. **Run the Log Extraction Script**
+   ```bash 
     python extract_logs.py YYYY-MM-DD
-    Replace YYYY-MM-DD with the desired date.
+Replace YYYY-MM-DD with the desired date.
 
 4.  **Check Output**
     Extracted logs will be saved in the output/ folder.
