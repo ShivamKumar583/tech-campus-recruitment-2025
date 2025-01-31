@@ -1,45 +1,69 @@
-# Discussion
+# **Log Extraction Script**
 
-## Solutions Considered
+## **Overview**
+This script extracts and processes log entries based on a given date. It efficiently filters logs using **Regular Expressions (`re` module)** to ensure accuracy and flexibility.
 
-### 1. String Manipulation with `split()`
-- **Approach:** We considered using Python's built-in `split()` method to break down each log line into its components (timestamp, log level, and message).
-- **Pros:** Simple and easy to implement.
-- **Cons:** Doesn't handle variations in log formatting and requires strict input structure.
+---
 
-### 2. Regular Expressions (`re` module)
-- **Approach:** Used regex to match the specific log format and extract required fields.
-- **Pros:** More flexible and can handle different timestamp formats.
-- **Cons:** Requires a well-defined pattern and may fail if logs deviate slightly.
+## **Solutions Considered**
 
-### 3. Using `datetime` for Parsing
-- **Approach:** We explored using Python’s `datetime` module to parse timestamps and reformat them correctly.
-- **Pros:** Ensures accurate timestamp formatting.
-- **Cons:** Extra processing needed for incorrect timestamps.
+### **1️⃣ String Manipulation with `split()`**
+- **Approach:** Used Python’s built-in `split()` method to divide log entries into timestamp, log level, and message.
+- **✅ Pros:**
+  - Simple and easy to implement.
+- **❌ Cons:**
+  - Requires a strict input structure.
+  - Struggles with variations in log formatting.
 
-## Final Solution Summary
+### **2️⃣ Regular Expressions (`re` module)**
+- **Approach:** Used regex to match the log format and extract key fields dynamically.
+- **✅ Pros:**
+  - More flexible, handles multiple timestamp formats.
+  - Extracts data accurately without relying on fixed positions.
+- **❌ Cons:**
+  - Requires a well-defined pattern.
+  - May break if log formats vary significantly.
 
-We chose **Regular Expressions (`re` module)** because:  
-- It allows us to accurately extract log components (timestamp, log level, message).  
-- It provides flexibility in handling different formats.  
-- It avoids unnecessary overhead from multiple string operations.  
+### **3️⃣ Using `datetime` for Parsing**
+- **Approach:** Utilized Python’s `datetime` module to parse and validate timestamps before further processing.
+- **✅ Pros:**
+  - Ensures correct timestamp handling.
+  - Reduces errors due to incorrect formats.
+- **❌ Cons:**
+  - Extra processing overhead for incorrect timestamps.
 
-## Steps to Run
+---
 
-1. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/ShivamKumar583/tech-campus-recruitment-2025.git
-   cd tech-campus-recruitment-2025
+## **Final Solution: Regular Expressions (`re` module)**
+We chose **regex-based extraction** because:
+✅ It provides flexibility in handling different log formats.  
+✅ It accurately extracts the timestamp, log level, and message.  
+✅ It avoids unnecessary overhead from multiple string operations.  
 
-2. **Navigate to src/ Directory**
-   ```bash
-    cd src
+---
 
-3. **Run the Log Extraction Script**
-   ```bash 
-    python extract_logs.py YYYY-MM-DD
-Replace YYYY-MM-DD with the desired date.
+## **How to Run the Log Extraction Script**
 
-4.  **Check Output**
-    Extracted logs will be saved in the output/ folder.
-    Example: output/output_2024-12-01.txt
+### **1️⃣ Clone the Repository**
+```bash
+git clone https://github.com/ShivamKumar583/tech-campus-recruitment-2025.git
+cd tech-campus-recruitment-2025
+```
+
+### **2️⃣ Navigate to the `src/` Directory**
+```bash
+cd src
+```
+
+### **3️⃣ Run the Script**
+```bash
+python extract_logs.py YYYY-MM-DD
+```
+📌 Replace `YYYY-MM-DD` with the target date.
+
+### **4️⃣ View Extracted Logs**
+📂 Extracted logs will be saved in the `output/` folder.  
+📜 Example output file:  
+✅ `output/logs_2024-12-01.txt`
+
+✨ **Now, your logs are clean, structured, and ready for analysis!** 🚀
